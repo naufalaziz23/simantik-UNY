@@ -1,0 +1,201 @@
+/* ----- Reset & Setup Dasar ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    overflow: hidden; /* Mencegah scroll */
+}
+
+/* ----- Container Fullscreen ----- */
+.container-fullscreen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ----- Panel Branding (Kiri) ----- */
+.branding-panel {
+    flex-basis: 50%; /* Porsi panel kiri */
+    background: #0d47a1; /* Biru solid (sesuai gambar) */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.branding-panel .logo-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.branding-panel h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.branding-panel p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* ----- Panel Form (Kanan) ----- */
+.form-panel {
+    flex-basis: 50%; /* Porsi panel kanan */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-panel form {
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-panel h2 {
+    color: #333;
+    font-size: 2.5rem; /* Judul "SIMANTIK" lebih besar */
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Grup Input Form */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px; /* Dibuat lebih tebal/besar */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9faff; /* Latar input sedikit kebiruan */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #1976d2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* --- VALIDASI "KERASA" (MERAH) --- */
+.input-group small.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: none; /* Sembunyi by default */
+    margin-top: 5px;
+}
+
+.input-group.error input {
+    border-color: #e74c3c;
+    background-color: #fff8f8;
+}
+
+.input-group.error small.error-message {
+    display: block; /* Muncul saat error */
+}
+/* --- --- */
+
+.form-options {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.forgot-password {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #0d47a1;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Responsif untuk HP ----- */
+@media (max-width: 768px) {
+    .container-fullscreen {
+        flex-direction: column;
+    }
+    
+    .branding-panel {
+        display: none; /* Panel biru disembunyikan di HP */
+    }
+    
+    .form-panel {
+        flex-basis: 100%; /* Form panel ambil 100% layar */
+        height: 100vh;
+        align-items: flex-start; /* Form mulai dari atas */
+        padding-top: 60px;
+    }
+
+    .form-panel h2 {
+        font-size: 2.2rem;
+    }
+}

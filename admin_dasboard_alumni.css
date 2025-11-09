@@ -1,0 +1,507 @@
+/* ==================================== */
+/* GAYA DASAR & LAYOUT         */
+/* ==================================== */
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Mencegah scroll di body */
+}
+
+/* Menggunakan Flexbox untuk layout utama */
+.page-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Mengatur ikon global */
+i {
+    margin-right: 8px;
+    color: #555;
+}
+
+/* ==================================== */
+/* STYLE SIDEBAR KIRI (BIRU)     */
+/* ==================================== */
+
+.sidebar {
+    width: 260px; /* Lebar sidebar */
+    background-color: #0d47a1; /* Biru tua, sesuai gambar */
+    color: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column; /* Mengatur item secara vertikal */
+    flex-shrink: 0; /* Mencegah sidebar menyusut */
+}
+
+.sidebar .logo {
+    font-size: 2.5rem; /* Ukuran font logo "SIMANTIK" */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 12px;
+}
+
+.sidebar-nav li a {
+    text-decoration: none;
+    color: #e0e0e0; /* Warna teks link */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 20px;
+    display: flex; /* Menggunakan flex agar ikon dan teks sejajar */
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav li a i {
+    color: #e0e0e0; /* Warna ikon */
+    font-size: 1.1rem;
+    margin-right: 15px; /* Jarak ikon ke teks */
+}
+
+.sidebar-nav li a:hover {
+    background-color: #1565c0; /* Biru sedikit lebih muda saat hover */
+    color: #fff;
+}
+
+/* Style untuk link yang aktif */
+.sidebar-nav li a.active {
+    background-color: #1976d2; /* Biru cerah untuk item aktif */
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Bagian Logout di bawah */
+.logout-section {
+    margin-top: auto; /* Mendorong ke bagian bawah */
+    text-align: center;
+    background-color: #1976d2; /* Warna background box */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.logout-image {
+    width: 150px; /* Sesuaikan ukuran gambar */
+    margin-bottom: 16px;
+}
+
+.btn-logout {
+    background-color: #ffffff;
+    color: #0d47a1; /* Warna teks biru */
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px; /* Tombol oval */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #f0f0f0;
+}
+
+/* ==================================== */
+/* STYLE KONTEN KANAN (PUTIH)     */
+/* ==================================== */
+
+.main-content-wrapper {
+    flex: 1; /* Mengisi sisa ruang */
+    background-color: #f4f7f9;
+    padding: 24px 30px;
+    overflow-y: auto; /* HANYA area ini yang bisa di-scroll */
+    height: 100vh;
+    box-sizing: border-box; /* Padding termasuk dalam height */
+}
+
+/* Navbar Atas */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 12px 20px 12px 45px; /* Padding kiri untuk ikon */
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    width: 300px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 18px;
+    top: 13px;
+    color: #aaa;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-info .fa-bell {
+    font-size: 1.3rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Placeholder */
+    border: 2px solid #0d47a1;
+}
+
+/* ==================================== */
+/* STYLE KONTEN EVENT (DARI SEBELUMNYA) */
+/* ==================================== */
+.event-page-container {
+    width: 100%;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.event-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+.nav-arrows .arrow-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left: 8px;
+    cursor: pointer;
+}
+.nav-arrows .arrow-icon i { color: #555; margin: 0; }
+.week-navigation {
+    display: flex;
+    justify-content: space-around; /* Menyebar rata */
+    gap: 10px;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.week-navigation .nav-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.week-navigation .nav-item:hover { background-color: #e0e0e0; }
+.week-navigation .nav-item.active { background-color: #0056b3; color: #fff; font-weight: 600; }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 kolom */
+    gap: 16px;
+}
+.day-column {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    min-height: 300px;
+}
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+.day-header h3 { margin: 0; font-size: 1.1rem; color: #333; text-transform: uppercase; }
+.day-header .date-num { font-size: 1rem; font-weight: 700; color: #0056b3; }
+.events-list { display: flex; flex-direction: column; gap: 12px; }
+.event-card {
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #007bff; /* Garis penanda */
+    border-radius: 8px;
+    padding: 14px;
+    transition: box-shadow 0.3s ease;
+}
+.event-card:hover { box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+.event-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.event-tag.workshop { background-color: #007bff; }
+.event-tag.webinar { background-color: #28a745; }
+.event-tag.kunjungan { background-color: #ffc107; color: #333; }
+.event-tag.lomba { background-color: #dc3545; }
+.event-tag.deadline { background-color: #6c757d; }
+.event-card:has(.workshop) { border-left-color: #007bff; }
+.event-card:has(.webinar) { border-left-color: #28a745; }
+.event-card:has(.kunjungan) { border-left-color: #ffc107; }
+.event-card:has(.lomba) { border-left-color: #dc3545; }
+.event-card:has(.deadline) { border-left-color: #6c757d; }
+.event-title { font-size: 1rem; font-weight: 600; margin: 0 0 8px 0; color: #222; }
+.event-detail, .event-time { font-size: 0.85rem; color: #555; margin: 4px 0; display: flex; align-items: center; }
+.event-detail i, .event-time i { color: #777; }
+.btn-detail, .btn-register {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 12px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+.btn-detail { background-color: #e9ecef; color: #333; }
+.btn-detail:hover { background-color: #d6dbe0; }
+.btn-register { background-color: #0056b3; color: #fff; }
+.btn-register:hover { background-color: #004494; }
+
+/* ==================================== */
+/* STYLE Halaman Alumni (BARU)      */
+/* ==================================== */
+
+.alumni-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Jarak antar panel */
+}
+
+/* 1. Grid Kartu Statistik */
+.summary-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+    gap: 20px;
+}
+
+.summary-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card .card-icon {
+    font-size: 2rem;
+    padding: 18px;
+    border-radius: 50%;
+    color: #fff;
+}
+.summary-card .card-icon.blue { background-color: #007bff; }
+.summary-card .card-icon.green { background-color: #28a745; }
+.summary-card .card-icon.purple { background-color: #10e9a0; }
+.summary-card .card-icon.red { background-color: #ffc400; }
+
+.summary-card .card-info h3 { margin: 0 0 4px 0; font-size: 1.75rem; color: #333; }
+.summary-card .card-info p { margin: 0; font-size: 0.9rem; color: #555; font-weight: 500; }
+.summary-card .card-info span { font-size: 0.8rem; color: #777; }
+.summary-card .card-info span i { font-size: 0.7rem; margin-right: 4px; color: #28a745; }
+.summary-card .card-info span i.fa-clock { color: #ffc107; }
+
+/* 2. Panel Data (Tabel & Grafik) */
+.data-panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.data-panel h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #333;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+.data-panel h3 i { color: #0d47a1; }
+
+/* 3. Style Tabel Alumni */
+.alumni-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.alumni-table thead th {
+    text-align: left;
+    padding: 12px 10px;
+    background-color: #f8f9fa;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.alumni-table tbody td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #333;
+    vertical-align: middle;
+}
+
+.alumni-table tbody tr:last-child td { border-bottom: none; }
+
+.user-cell { display: flex; align-items: center; gap: 12px; }
+.user-pic-placeholder { width: 40px; height: 40px; border-radius: 50%; background-color: #e0e0e0; }
+
+.status-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+.status-tag.bekerja { background-color: #28a745; }
+.status-tag.studi-lanjut { background-color: #007bff; }
+.status-tag.mencari-kerja { background-color: #ffc107; color: #333; }
+
+.btn-detail-table {
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    background-color: #e9ecef;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+.btn-detail-table:hover { background-color: #d6dbe0; }
+
+/* 4. Style Panel Bawah (Pengganti Grafik) */
+.bottom-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 24px;
+}
+
+.donut-chart-panel {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.chart-placeholder-donut {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: 2px dashed #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chart-legend .legend-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.chart-legend .legend-item::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.chart-legend .legend-item.bekerja::before { background-color: #28a745; }
+.chart-legend .legend-item.studi-lanjut::before { background-color: #007bff; }
+.chart-legend .legend-item.mencari-kerja::before { background-color: #ffc107; }
+
+.bar-chart-panel { margin-top: 16px; }
+.bar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.bar-list li { display: flex; flex-direction: column; gap: 6px; }
+.bar-list .bar-label { font-size: 0.9rem; font-weight: 500; color: #333; }
+.bar-bg {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    background-color: #0d47a1;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 8px;
+    line-height: 20px;
+    box-sizing: border-box;
+}

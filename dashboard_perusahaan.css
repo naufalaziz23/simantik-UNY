@@ -1,0 +1,129 @@
+/* ===== SIMANTIK Professional Dashboard (Final) ===== */
+:root {
+  --primary:#0044cc;
+  --primary-600:#003399;
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --text:#1f2937;
+  --shadow:0 4px 18px rgba(16,24,40,0.06);
+  --radius:8px;
+  --gap:16px;
+  --pad:18px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,"Poppins",system-ui,sans-serif}
+body{background:var(--bg);color:var(--text);overflow:hidden}
+.dashboard-container{display:flex;height:100vh;width:100%}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar{
+  width:250px;background:linear-gradient(180deg,var(--primary),var(--primary-600));
+  color:#fff;padding:28px 18px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.logo{font-weight:700;font-size:20px;text-align:center;margin-bottom:20px}
+.nav-menu{list-style:none;padding:0;margin:0}
+.nav-menu li{margin-bottom:10px}
+.nav-menu a{
+  display:flex;align-items:center;gap:12px;padding:10px 14px;
+  color:#fff;text-decoration:none;border-radius:6px;font-weight:600;
+  transition:background 0.2s ease;
+}
+.nav-menu a:hover,.nav-menu a.active{background:rgba(255,255,255,0.1)}
+.nav-menu a i{width:22px;text-align:center}
+.logout-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px;border-radius:6px;background:rgba(255,255,255,0.1);
+  color:#fff;text-decoration:none;font-weight:700;transition:background 0.2s;
+}
+.logout-btn:hover{background:rgba(255,255,255,0.2)}
+
+/* ---------- MAIN CONTENT ---------- */
+.main-content{flex:1;padding:22px 28px;overflow:auto}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px}
+.header-title h2{font-size:20px;margin-bottom:4px}
+.header-title p{color:var(--muted);font-size:13px}
+.header-controls{display:flex;align-items:center;gap:12px}
+.search-bar{position:relative}
+.search-bar input{padding:8px 32px 8px 12px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:14px}
+.search-bar i{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.notification-icon{font-size:18px;color:var(--muted)}
+.user-profile{display:flex;align-items:center;gap:10px}
+.user-profile img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.user-profile span{font-weight:600;color:var(--muted)}
+
+/* ---------- STATS ---------- */
+.stats-container{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:20px}
+.stat-card{background:var(--card);padding:14px;border-radius:8px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;border:1px solid #eef2f6}
+.stat-icon{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
+.stat-icon.blue{background:#0d6efd}
+.stat-icon.green{background:#198754}
+.stat-icon.yellow{background:#ffc107;color:#111}
+.stat-icon.purple{background:#6f42c1}
+.stat-info h4{margin:0;color:var(--muted);font-size:13px}
+.stat-info p{margin:0;font-size:18px;font-weight:700;color:var(--text)}
+
+/* ---------- TABLE LOWONGAN ---------- */
+.table-lowongan{width:100%;border-collapse:collapse;background:var(--card);box-shadow:var(--shadow);border-radius:6px;overflow:hidden}
+.table-lowongan thead th{background:#f4f7fb;color:var(--muted);text-align:left;padding:12px;border-bottom:1px solid #e9eef6;font-size:13px}
+.table-lowongan tbody td{padding:12px;border-bottom:1px solid #f1f4f9;font-size:14px}
+.table-lowongan tbody tr:last-child td{border-bottom:none}
+
+/* ---------- FORM LOWONGAN ---------- */
+.form-container{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.form-container input[type="text"],.form-container select{
+  padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:14px;min-width:200px
+}
+.form-container button{
+  background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer
+}
+.form-container button:hover{background:var(--primary-600)}
+
+/* ---------- PROFIL PERUSAHAAN ---------- */
+.profile-card{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:18px;
+  background:var(--card);padding:22px;border-radius:8px;box-shadow:var(--shadow);
+  border:1px solid #eef2f6;margin-top:10px;
+}
+.profile-left{display:flex;flex-direction:column;gap:8px}
+.profile-left h2{font-size:22px;margin-bottom:6px}
+.profile-left p{font-size:14px;line-height:1.5;color:var(--muted)}
+.profile-right{
+  display:flex;flex-direction:column;gap:10px;background:#f9fbff;
+  padding:14px;border-radius:8px;border:1px solid #e9eef6;
+}
+.profile-right h4{margin:0;font-size:15px;color:var(--text)}
+.profile-right p{margin:0;font-size:13px;color:var(--muted)}
+
+/* ---------- DAFTAR ALUMNI (LinkedIn style) ---------- */
+.filter-container{display:flex;gap:10px;margin-bottom:12px;align-items:center}
+#alumniList{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:14px;
+}
+.alumni-card{
+  background:var(--card);border-radius:10px;padding:14px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;
+  transition:transform .2s,box-shadow .2s;
+}
+.alumni-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(16,24,40,0.12)}
+.alumni-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover}
+.alumni-info h4{margin:0;font-size:15px;font-weight:700}
+.alumni-info p{margin:2px 0;font-size:13px;color:var(--muted)}
+.skill-tag{display:inline-block;background:#e6f0ff;color:#0d6efd;font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px;margin-top:4px}
+
+/* ---------- UTILITIES ---------- */
+.hidden-section{display:none}
+.active-section{display:block}
+
+@media(max-width:1100px){
+  .stats-container{grid-template-columns:repeat(2,1fr)}
+  .profile-card{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .sidebar{display:none}
+  .main-content{padding:16px}
+  .dashboard-container{height:auto}
+}
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Perusahaan</title>
+    <link rel="stylesheet" href="portal_perushaan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container-fullscreen">
+        <div class="branding-panel">
+            <img src="Logo_Teknik_Industri_UNY-removebg-preview 2.png" alt="Logo Teknik Industri UNY" class="logo">
+            
+            <h1>Sistem Informasi Manajemen</h1>
+            <p>Alumni Teknik Industri</p>
+        </div>
+        
+        <div class="form-panel">
+            <form id="register-form">
+                <h2>Daftar Perusahaan</h2>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i> Daftar dengan Google
+                    </button>
+                    <button type="button" class="social-btn email">
+                        <i class="fas fa-envelope"></i> Daftar dengan Email
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>ATAU</span>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="nama">Nama PIC</label>
+                        <input type="text" id="nama" placeholder="Nama lengkap Anda">
+                        <small class="error-message"></small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="pt">Nama Perusahaan (PT)</label>
+                        <input type="text" id="pt" placeholder="Contoh: PT. Maju Jaya">
+                        <small class="error-message"></small>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Perusahaan</label>
+                    <input type="email" id="email" placeholder="contoh@perusahaan.com">
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Minimal 8 karakter">
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-group">
+                        <label for="password-confirm">Konfirmasi Password</label>
+                        <input type="password" id="password-confirm" placeholder="Ulangi password">
+                        <small class="error-message"></small>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="deskripsi">Deskripsi Singkat</label>
+                    <textarea id="deskripsi" placeholder="Jelaskan perusahaan Anda..."></textarea>
+                    <small class="error-message"></small>
+                </div>
+                
+                <button type="submit" class="create-button">Create Account</button>
+                
+                <div class="login-link">
+                    <p>Sudah punya akun? <a href="#">Login Now</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <div class="checkmark-line checkmark-stem"></div>
+                <div class="checkmark-line checkmark-kick"></div>
+            </div>
+            <h3>Berhasil!</h3>
+            <p>Akun perusahaan Anda telah berhasil dibuat.</p>
+            <button id="close-modal-btn">Selesai</button>
+        </div>
+    </div>
+
+    <script src="portal_perushaan.js"></script>
+
+    <div class="login-link">
+    <p>Sudah punya akun? <a href="portal_perushaan_2.html">Login Now</a></p>
+</div>
+</body>
+</html>

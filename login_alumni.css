@@ -1,0 +1,243 @@
+/* Reset CSS dasar dan pengaturan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* Latar belakang putih */
+}
+
+/* Kontainer utama (sekarang full screen) */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh; /* Mengisi tinggi layar */
+}
+
+/* ----------------------------- */
+/* Panel Kiri (Informasi)        */
+/* ----------------------------- */
+.info-panel {
+    flex-basis: 45%; /* Lebar panel kiri 45% */
+    background-color: #0052cc; /* Warna biru */
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info-content {
+    max-width: 300px;
+}
+
+.info-panel .logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+}
+
+.info-panel h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.info-panel .illustration {
+    width: 100%;
+    max-width: 280px;
+}
+
+/* ----------------------------- */
+/* Panel Kanan (Formulir)        */
+/* ----------------------------- */
+.form-panel {
+    flex-basis: 55%; /* Lebar panel kanan 55% */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Menengahkan .form-wrapper */
+    overflow-y: auto; /* Untuk scroll jika kontennya panjang */
+}
+
+/* Wrapper untuk konten form agar tidak terlalu lebar */
+.form-wrapper {
+    width: 100%;
+    max-width: 450px; /* Lebar maksimum konten form */
+}
+
+.form-wrapper h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tombol Login Sosial */
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn.google-btn i {
+    color: #DB4437;
+}
+
+.social-btn.email-btn i {
+    color: #4285F4;
+}
+
+/* Pemisah "OR" */
+.separator {
+    text-align: center;
+    color: #aaa;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Grid untuk input form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.form-group input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-group input[type="date"] {
+    color: #555;
+}
+
+/* Tombol Create */
+.create-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0052cc;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.create-btn:hover {
+    background-color: #0041a3;
+}
+
+.create-btn:active {
+    transform: scale(0.98);
+}
+
+/* Link Login Now */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #0052cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------- */
+/* Desain Responsif (HP)       */
+/* ----------------------------- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Tumpuk panel secara vertikal */
+    }
+
+    .info-panel {
+        flex-basis: auto; /* Hapus lebar tetap */
+        min-height: 40vh; /* Beri tinggi minimal */
+    }
+
+    .form-panel {
+        flex-basis: auto;
+        flex-grow: 1; /* Panel form mengambil sisa tinggi */
+        padding: 30px;
+    }
+    
+    .form-wrapper {
+        max-width: 100%; /* Izinkan form mengisi panel di HP */
+    }
+
+    /* Ubah grid form menjadi 1 kolom */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-login {
+        flex-direction: column; /* Tumpuk tombol sosial */
+    }
+} 
+    /* ... (semua CSS Anda sebelumnya) ... */
+
+/* Style untuk input yang error */
+.form-group input.error {
+    border-color: #e74c3c; /* Merah */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* Efek glow merah */
+}

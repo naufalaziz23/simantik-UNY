@@ -1,0 +1,373 @@
+/* ----- Reset & Setup Dasar ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    overflow: hidden; /* Mencegah scroll di level body */
+}
+
+/* ----- Container Fullscreen ----- */
+.container-fullscreen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ----- Panel Branding (Kiri) ----- */
+.branding-panel {
+    flex-basis: 40%; /* Porsi panel kiri */
+    background: linear-gradient(135deg, #0d47a1, #1976d2); /* Gradasi biru */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.branding-panel .logo-img { /* STYLING BARU UNTUK GAMBAR LOGO */
+    width: 120px; /* Ukuran yang lebih sesuai untuk logo */
+    height: auto; /* Agar rasio aspek tetap */
+    margin-bottom: 20px;
+    max-width: 100%; /* Agar tidak keluar dari batas */
+}
+
+
+.branding-panel h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.branding-panel p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* ----- Panel Form (Kanan) ----- */
+.form-panel {
+    flex-basis: 60%; /* Porsi panel kanan */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto; /* Scroll jika form terlalu panjang */
+}
+
+.form-panel form {
+    max-width: 550px;
+    width: 100%;
+}
+
+.form-panel h2 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tombol Social */
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.social-btn:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.social-btn.google i { color: #DB4437; }
+.social-btn.email i { color: #666; }
+
+/* Divider "ATAU" */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+.divider span {
+    padding: 0 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Grid untuk input */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Grup Input Form */
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* --- VALIDASI "KERASA" (MERAH) --- */
+.input-group small.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: none; /* Sembunyi by default */
+    margin-top: 4px;
+}
+
+.input-group.error input,
+.input-group.error textarea {
+    border-color: #e74c3c;
+}
+
+.input-group.error small.error-message {
+    display: block; /* Muncul saat error */
+}
+/* --- --- */
+
+.create-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.create-button:hover {
+    background-color: #0d47a1;
+}
+
+.create-button:active {
+    transform: scale(0.98);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ----- MODAL NOTIFIKASI "KERASA POLL" ----- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    /* Animasi "muncul" yang kerasa */
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#close-modal-btn {
+    padding: 10px 30px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#close-modal-btn:hover {
+    background-color: #0d47a1;
+}
+
+/* Animasi Ikon Centang (Checkmark) */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    margin: 0 auto 20px auto;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+.checkmark-line {
+    background-color: #4CAF50;
+    height: 4px;
+    position: absolute;
+    border-radius: 2px;
+}
+
+.checkmark-stem {
+    width: 25px;
+    left: 14px;
+    top: 38px;
+    transform: rotate(45deg);
+    animation: drawStem 0.3s 0.5s ease-out forwards;
+}
+
+.checkmark-kick {
+    width: 40px;
+    left: 30px;
+    top: 32px;
+    transform: rotate(-45deg);
+    animation: drawKick 0.3s 0.8s ease-out forwards;
+}
+
+/* Animasi Keyframes */
+@keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes drawStem {
+    from { width: 0; }
+    to { width: 25px; }
+}
+
+@keyframes drawKick {
+    from { width: 0; }
+    to { width: 40px; }
+}
+
+/* ----- Responsif untuk HP ----- */
+@media (max-width: 768px) {
+    .container-fullscreen {
+        flex-direction: column;
+    }
+    
+    .branding-panel {
+        flex-basis: auto; /* Matikan flex-basis */
+        height: 200px; /* Beri tinggi tetap */
+        padding: 20px;
+    }
+    
+    .branding-panel h1 { font-size: 1.8rem; }
+    .branding-panel p { font-size: 1rem; }
+    
+    .form-panel {
+        flex-basis: auto; /* Matikan flex-basis */
+        padding: 25px;
+    }
+
+    .form-panel form { max-width: 100%; }
+    .input-grid { grid-template-columns: 1fr; } /* Tumpuk input grid */
+    .social-login { flex-direction: column; } /* Tumpuk tombol social */
+
+    .branding-panel .logo-img { /* Sesuaikan ukuran logo di HP */
+        width: 80px; 
+    }
+}

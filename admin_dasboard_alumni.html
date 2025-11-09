@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMANTIK - Dashboard Alumni</title>
+    <link rel="stylesheet" href="admin_dasboard_alumni.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="page-container">
+        
+        <aside class="sidebar">
+            <h1 class="logo">SIMANTIK</h1>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> JOBS</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> EVENT</a></li>
+                    <li><a href="#" class="active"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
+                </ul>
+            </nav>
+
+            <div class="logout-section">
+             <a href="portal_login.html" class="btn-logout">Log out</a>
+</div>
+        </aside>
+
+        <main class="main-content-wrapper">
+            
+            <header class="top-navbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari...">
+                </div>
+                <div class="admin-info">
+                    <i class="fas fa-bell"></i>
+                    <span class="admin-name">ADMIN</span>
+                    <div class="admin-pic"></div> </div>
+            </header>
+
+            <div class="alumni-page-content">
+
+                <div class="summary-cards-grid">
+                    <div class="summary-card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>1.200</h3>
+                            <p>Total Alumni</p>
+                            <span><i class="fas fa-check-circle"></i> Terverifikasi</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon green">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>850</h3>
+                            <p>Bekerja</p>
+                            <span><i class="fas fa-arrow-up"></i> 50</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>135</h3>
+                            <p>Studi Lanjut</p>
+                            <span><i class="fas fa-arrow-up"></i> 12</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon red">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>43</h3>
+                            <p>Lowongan Kerja</p>
+                            <span><i class="fas fa-clock"></i> Baru di post</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-panel">
+                    <h3><i class="fas fa-list-ul"></i> Database Alumni</h3>
+                    
+                    <table class="alumni-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Alumni</th>
+                                <th>Angkatan</th>
+                                <th>Status</th>
+                                <th>Perusahaan / Universitas</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-pic-placeholder"></div>
+                                        <span>Ahmad Budiarto</span>
+                                    </div>
+                                </td>
+                                <td>2022</td>
+                                <td><span class="status-tag bekerja">Bekerja</span></td>
+                                <td>PT. Industri Maju</td>
+                                <td><a href="#" class="btn-detail-table">Lihat Profil</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-pic-placeholder"></div>
+                                        <span>Siti Aminah</span>
+                                    </div>
+                                </td>
+                                <td>2022</td>
+                                <td><span class="status-tag studi-lanjut">Studi Lanjut</span></td>
+                                <td>Universitas Gadjah Mada</td>
+                                <td><a href="#" class="btn-detail-table">Lihat Profil</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-pic-placeholder"></div>
+                                        <span>Putra Dewa</span>
+                                    </div>
+                                </td>
+                                <td>2021</td>
+                                <td><span class="status-tag bekerja">Bekerja</span></td>
+                                <td>Shopee Indonesia</td>
+                                <td><a href="#" class="btn-detail-table">Lihat Profil</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-pic-placeholder"></div>
+                                        <span>Chandra Wijaya</span>
+                                    </div>
+                                </td>
+                                <td>2022</td>
+                                <td><span class="status-tag mencari-kerja">Mencari Kerja</span></td>
+                                <td>---</td>
+                                <td><a href="#" class="btn-detail-table">Lihat Profil</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bottom-panel-grid">
+
+                    <div class="data-panel">
+                        <h3><i class="fas fa-chart-pie"></i> Sebaran Status Alumni</h3>
+                        <div class="donut-chart-panel">
+                            <div class="chart-placeholder-donut">
+                                <p>Grafik Donat</p>
+                            </div>
+                            <div class="chart-legend">
+                                <span class="legend-item bekerja">Bekerja (71%)</span>
+                                <span class="legend-item studi-lanjut">Studi Lanjut (11%)</span>
+                                <span class="legend-item mencari-kerja">Mencari Kerja (18%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-panel">
+                        <h3><i class="fas fa-industry"></i> Top 5 Sebaran Industri</h3>
+                        <div class="bar-chart-panel">
+                            <ul class="bar-list">
+                                <li>
+                                    <span class="bar-label">Manufaktur</span>
+                                    <div class="bar-bg">
+                                        <div class="bar-fill" style="width: 40%;">40%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bar-label">Logistik & Supply Chain</span>
+                                    <div class="bar-bg">
+                                        <div class="bar-fill" style="width: 25%;">25%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bar-label">Jasa & Konsultan</span>
+                                    <div class="bar-bg">
+                                        <div class="bar-fill" style="width: 15%;">15%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bar-label">Startup (Teknologi)</span>
+                                    <div class="bar-bg">
+                                        <div class="bar-fill" style="width: 10%;">10%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="bar-label">BUMN & Lainnya</span>
+                                    <div class="bar-bg">
+                                        <div class="bar-fill" style="width: 10%;">10%</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+      
+</a>
+
+            </div> </main> </div> </body>
+</html>

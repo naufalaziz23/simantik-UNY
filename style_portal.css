@@ -1,0 +1,176 @@
+/* === Reset & Font === */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    height: 100vh; /* Memastikan body mengambil 100% tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Mencegah scrollbar muncul pada body */
+    overflow: hidden; 
+}
+
+/* === Layout Container (PENYESUAIAN FULL SCREEN) === */
+.container {
+    display: flex;
+    /* Diperbesar untuk memenuhi hampir seluruh layar */
+    width: 95%; 
+    height: 90%; 
+    max-width: 1200px; /* Batasan lebar maksimum (opsional) */
+    max-height: 850px; /* Batasan tinggi maksimum (opsional) */
+    
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* === Left Section (Konten Tengah Vertikal) === */
+.left {
+    flex: 1;
+    padding: 60px;
+    /* Tambahan: Memastikan konten form berada di tengah vertikal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #1f2937;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+/* === Input Groups === */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-group.active {
+    border-color: #0a49f6; /* Tambahkan border biru saat aktif */
+    box-shadow: 0 0 10px rgba(10, 73, 246, 0.2);
+}
+
+.input-group input[type="radio"]:checked + label {
+    color: #0a49f6;
+    font-weight: 600;
+}
+.input-group input[type="radio"]:checked {
+    accent-color: #0a49f6;
+}
+
+.input-group:hover {
+    border-color: #0a49f6;
+}
+
+label {
+    margin-left: 15px;
+    cursor: pointer;
+    color: #374151;
+    flex-grow: 1;
+}
+
+input[type="radio"] {
+    transform: scale(1.2);
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #0a49f6;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(10, 73, 246, 0.4);
+}
+
+button:hover {
+    background-color: #0039cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 73, 246, 0.6);
+}
+
+/* === Right Section === */
+.right {
+    flex: 1;
+    background-color: #0a49f6;
+    color: white;
+    text-align: center;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.right span {
+    color: #fff;
+}
+
+.right p {
+    font-size: 16px;
+    color: #dbeafe;
+    margin-bottom: 30px;
+}
+
+/* KONTROL UKURAN GAMBAR LOGO AGAR TIDAK KEBESARAN */
+.right .logo { 
+    max-width: 80%;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    margin-top: 40px;
+    display: block;
+}
+
+/* === Responsif untuk Layar Kecil (Mobile) === */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+        /* Di layar kecil, biarkan tinggi auto agar konten tidak terpotong */
+        height: auto; 
+    }
+
+    .left {
+        padding: 30px;
+    }
+
+    .right {
+        padding: 40px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .right .logo {
+        max-width: 50%;
+        max-height: 150px;
+        margin-top: 20px;
+    }
+}

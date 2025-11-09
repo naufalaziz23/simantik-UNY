@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SIMANTIK</title>
+    <link rel="stylesheet" href="poertal_perushann_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-fullscreen">
+        <div class="branding-panel">
+            <img src="Logo_Teknik_Industri_UNY-removebg-preview 2.png" alt="Logo Teknik Industri UNY" class="logo-img">
+            <h1>Sistem informasi manejeman</h1>
+            <p>Alumni Teknik Industri</p>
+        </div>
+        
+        <div class="form-panel">
+            <form id="login-form">
+                <h2>SIMANTIK</h2>
+                
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username Anda">
+                    <small class="error-message"></small>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password Anda">
+                    <small class="error-message"></small>
+                </div>
+                
+                <div class="form-options">
+                    <a href="#" class="forgot-password">Lupa password?</a>
+                </div>
+                
+                <button type="submit" class="login-button">Login</button>
+                
+                <div class="signup-link">
+                    <p>Belum punya akun? <a href="index.html">Daftar di sini</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Menunggu semua konten HTML dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            'use strict';
+
+            // Ambil elemen-elemen yang diperlukan
+            const form = document.getElementById('login-form');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            // Listener utama: saat form di-submit
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Mencegah form terkirim
+                
+                if (validateInputs()) {
+                    // Jika validasi lolos, redirect ke dashboard
+                    window.location.href = 'dashboard_perusahaan.html';
+                } else {
+                    console.log('Validasi gagal. Periksa form.');
+                }
+            });
+
+            // --- FUNGSI VALIDASI ---
+            function validateInputs() {
+                resetErrors();
+                let isValid = true;
+
+                // Cek Username
+                if (isEmpty(usernameInput.value)) {
+                    isValid = false;
+                    showError(usernameInput, 'Username tidak boleh kosong.');
+                }
+
+                // Cek Password
+                if (isEmpty(passwordInput.value)) {
+                    isValid = false;
+                    showError(passwordInput, 'Password tidak boleh kosong.');
+                }
+
+                return isValid;
+            }
+
+            // --- FUNGSI HELPER (PEMBANTU) ---
+            function showError(inputElement, message) {
+                const inputGroup = inputElement.closest('.input-group');
+                const errorDisplay = inputGroup.querySelector('.error-message');
+                inputGroup.classList.add('error');
+                errorDisplay.innerText = message;
+            }
+
+            function resetErrors() {
+                const errorGroups = document.querySelectorAll('.input-group.error');
+                errorGroups.forEach(group => {
+                    group.classList.remove('error');
+                    const errorDisplay = group.querySelector('.error-message');
+                    errorDisplay.innerText = '';
+                });
+            }
+
+            function isEmpty(value) {
+                return value.trim() === '';
+            }
+        });
+    </script>
+
+</body>
+</html>
+      

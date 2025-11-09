@@ -1,0 +1,236 @@
+/* Reset CSS dasar dan pengaturan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Latar belakang abu-abu (sama seperti dashboard) */
+    color: #333;
+    line-height: 1.6;
+}
+
+.profile-page-container {
+    width: 100%;
+    max-width: 900px; /* Batasi lebar agar form tidak terlalu lebar */
+    margin: 0 auto; /* Tengahkan halaman */
+    padding: 30px;
+}
+
+/* Header Halaman */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0052cc; /* Warna biru SIMANTIK */
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #0052cc;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.back-link i {
+    font-size: 1.2rem;
+}
+
+.back-link:hover {
+    color: #0041a3;
+}
+
+/* Widget Form Utama */
+.profile-form-widget {
+    background-color: #ffffff; /* Kotak putih */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form-widget h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-form-widget p {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-separator {
+    border: none;
+    border-top: 1px solid #f0f2f5;
+    margin: 25px 0;
+}
+
+/* Styling Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0052cc;
+    box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+}
+
+.form-group input[readonly] {
+    background-color: #f0f2f5;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.form-group small {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Form Grid (untuk 2 kolom) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 30px;
+}
+
+/* Grup Upload Foto */
+.photo-upload-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f2f5;
+}
+
+.form-group input[type="file"] {
+    font-size: 0.9rem;
+    border: none;
+    padding: 0;
+}
+/* Chrome, etc. */
+.form-group input[type="file"]::file-selector-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 8px 15px;
+    border: 1px solid #0052cc;
+    border-radius: 5px;
+    background-color: #e6f0ff;
+    color: #0052cc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+.form-group input[type="file"]::file-selector-button:hover {
+    background-color: #d1e3ff;
+}
+
+
+/* Tombol Simpan */
+.form-actions {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.save-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0052cc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.save-btn:hover {
+    background-color: #0041a3;
+}
+
+.save-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .profile-page-container {
+        padding: 15px;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .profile-form-widget {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* 1 kolom di HP */
+        gap: 0;
+    }
+
+    .photo-upload-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+    .save-btn {
+        width: 100%;
+    }
+}

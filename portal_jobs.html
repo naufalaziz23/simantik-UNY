@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simantik Job Portal</title>
+    <link rel="stylesheet" href="portal_jobs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="portal-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">SIMANTIK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#"><i class="fa-solid fa-table-columns"></i> Dashboard</a></li>
+                <li class="active"><a href="#"><i class="fa-solid fa-briefcase"></i> JOBS</a></li>
+                <li><a href="evemt_post.html"><i class="fa-solid fa-calendar-days"></i> EVENT</a></li>
+                <li><a href="admin_dasboard_alumni.html"><i class="fa-solid fa-user-graduate"></i> Alumni</a></li>
+            </ul>
+            <div class="logout-card">
+                <img src="https://i.imgur.com/qX6S8vE.png" alt="Rocket" class="logout-rocket">
+                <p>Ready to launch your career?</p>
+                <button class="logout-button">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h2>Find Your Next Job</h2>
+                    <p>Search from 2567+ jobs</p>
+                </div>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for jobs, companies...">
+                </div>
+                <div class="user-profile">
+                    <i class="fa-solid fa-bell"></i>
+                    <img src="httpsa://i.imgur.com/uG0vA6N.png" alt="User" class="profile-pic">
+                </div>
+            </header>
+
+            <div class="content-body">
+                
+                <aside class="filter-panel">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <h4>Salary Range (INR)</h4>
+                        <div class="salary-inputs">
+                            <input type="text" placeholder="Min">
+                            <input type="text" placeholder="Max">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Job Type</h4>
+                        <label><input type="checkbox" checked> All (2567)</label>
+                        <label><input type="checkbox"> Full-Time (450)</label>
+                        <label><input type="checkbox"> Part-Time (145)</label>
+                        <label><input type="checkbox"> Internship (65)</label>
+                        <label><input type="checkbox"> Contract (12)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Work Mode</h4>
+                        <label><input type="checkbox"> On-Site (890)</label>
+                        <label><input type="checkbox"> Remote (180)</label>
+                        <label><input type="checkbox"> Hybrid (200)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Experience Level</h4>
+                        <label><input type="checkbox"> Entry Level (500)</label>
+                        <label><input type="checkbox"> Mid Level (1200)</label>
+                        <label><input type="checkbox"> Senior Level (750)</label>
+                        <label><input type="checkbox"> Manager (100)</label>
+                        <label><input type="checkbox"> Director / VP (17)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Job Functions</h4>
+                        <label><input type="checkbox"> Marketing (21)</label>
+                        <label><input type="checkbox"> Engineering (45)</label>
+                        <label><input type="checkbox"> Design (71)</label>
+                        <label><input type="checkbox"> Sales (24)</label>
+                        <label><input type="checkbox"> Customer Service (109)</label>
+                        <label><input type="checkbox"> Finance (18)</label>
+                        <label><input type="checkbox"> Human Resources (15)</label>
+                        <label><input type="checkbox"> Product Management (30)</label>
+                        <label><input type="checkbox"> Data Science (22)</label>
+                        <label><input type="checkbox"> Operations (35)</label>
+                        <label><input type="checkbox"> IT & Technology (150)</label>
+                        <label><input type="checkbox"> Business Development (42)</label>
+                        <label><input type="checkbox"> Legal (10)</label>
+                        <label><input type="checkbox"> Admin (55)</label>
+                        <label><input type="checkbox"> Healthcare (8)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Location</h4>
+                        <label><input type="checkbox"> Jakarta (300)</label>
+                        <label><input type="checkbox"> Bandung (150)</label>
+                        <label><input type="checkbox"> Surabaya (120)</label>
+                        <label><input type="checkbox"> Bangalore (90)</label>
+                        <label><input type="checkbox"> New Delhi (85)</label>
+                        <label><input type="checkbox"> Singapore (50)</label>
+                        <label><input type="checkbox"> Mumbai (45)</label>
+                        <label><input type="checkbox"> Yogyakarta (70)</label>
+                        <label><input type="checkbox"> Medan (30)</label>
+                        <label><input type="checkbox"> Semarang (25)</label>
+                        <label><input type="checkbox"> Kuala Lumpur (15)</label>
+                        <label><input type="checkbox"> Ho Chi Minh (5)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Company Size</h4>
+                        <label><input type="checkbox"> 1-50 employees</label>
+                        <label><input type="checkbox"> 51-200 employees</label>
+                        <label><input type="checkbox"> 201-500 employees</label>
+                        <label><input type="checkbox"> 501-1000 employees</label>
+                        <label><input type="checkbox"> 1000+ employees</label>
+                    </div>
+
+                    <button class="clear-filter-btn">Clear All Filters</button>
+                </aside>
+
+                <section class="job-listings">
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/bA1MguA.png" alt="Google Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Technical Support Specialist</h4>
+                                <span>Google Inc.</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 20,000 - 25,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> New Delhi, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">10+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/XwEwA8P.png" alt="Intel Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Marketing Officer</h4>
+                                <span>Intel Corp</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 15,000 - 35,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">30+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/b28wS7t.png" alt="Meta Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Product Designer</h4>
+                                <span>Meta</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 75,000 - 110,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Singapore</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">25+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/y8P2sBP.png" alt="Amazon Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Cloud Solutions Architect</h4>
+                                <span>Amazon AWS</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 90,000 - 150,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">40+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/S6QGNGa.png" alt="Netflix Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Content Strategist (Intern)</h4>
+                                <span>Netflix</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 10,000 - 15,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Mumbai, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Internship</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">80+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/sSfl2fQ.png" alt="Spotify Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Data Scientist</h4>
+                                <span>Spotify</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 80,000 - 130,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">15+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/TKeKxT1.png" alt="Tokopedia Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>UI/UX Researcher</h4>
+                                <span>Tokopedia</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 40,000 - 60,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">32+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/pAOxkI3.png" alt="Gojek Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Backend Engineer (Go)</h4>
+                                <span>Gojek</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 65,000 - 95,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">28+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/bA1MguA.png" alt="Google Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Technical Support Specialist</h4>
+                                <span>Google Inc.</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 20,000 - 25,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> New Delhi, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">10+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/XwEwA8P.png" alt="Intel Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Marketing Officer</h4>
+                                <span>Intel Corp</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 15,000 - 35,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">30+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/b28wS7t.png" alt="Meta Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Product Designer</h4>
+                                <span>Meta</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 75,000 - 110,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Singapore</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">25+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/y8P2sBP.png" alt="Amazon Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Cloud Solutions Architect</h4>
+                                <span>Amazon AWS</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 90,000 - 150,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">40+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/S6QGNGa.png" alt="Netflix Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Content Strategist (Intern)</h4>
+                                <span>Netflix</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 10,000 - 15,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Mumbai, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Internship</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">80+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/sSfl2fQ.png" alt="Spotify Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Data Scientist</h4>
+                                <span>Spotify</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 80,000 - 130,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">15+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/TKeKxT1.png" alt="Tokopedia Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>UI/UX Researcher</h4>
+                                <span>Tokopedia</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 40,000 - 60,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">32+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/pAOxkI3.png" alt="Gojek Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Backend Engineer (Go)</h4>
+                                <span>Gojek</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 65,000 - 95,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">28+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/bA1MguA.png" alt="Google Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Technical Support Specialist</h4>
+                                <span>Google Inc.</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 20,000 - 25,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> New Delhi, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">10+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/XwEwA8P.png" alt="Intel Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Marketing Officer</h4>
+                                <span>Intel Corp</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 15,000 - 35,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Part-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">30+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/b28wS7t.png" alt="Meta Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Product Designer</h4>
+                                <span>Meta</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 75,000 - 110,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Singapore</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">25+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/y8P2sBP.png" alt="Amazon Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Cloud Solutions Architect</h4>
+                                <span>Amazon AWS</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 90,000 - 150,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">40+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/S6QGNGa.png" alt="Netflix Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Content Strategist (Intern)</h4>
+                                <span>Netflix</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 10,000 - 15,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Mumbai, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-part-time">Internship</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">80+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/sSfl2fQ.png" alt="Spotify Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Data Scientist</h4>
+                                <span>Spotify</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 80,000 - 130,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-remote">Remote</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">15+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/TKeKxT1.png" alt="Tokopedia Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>UI/UX Researcher</h4>
+                                <span>Tokopedia</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 40,000 - 60,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-hybrid">Hybrid</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">32+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="card-header">
+                            <img src="https://i.imgur.com/pAOxkI3.png" alt="Gojek Logo" class="company-logo">
+                            <div class="job-title">
+                                <h4>Backend Engineer (Go)</h4>
+                                <span>Gojek</span>
+                            </div>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="salary">Salary: 65,000 - 95,000 INR</span>
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag tag-full-time">Full-Time</span>
+                            <span class="tag tag-on-site">On-Site</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="applicants">28+ applicants</span>
+                            <div class="buttons">
+                                <button class="btn-details">View details</button>
+                                <button class="btn-apply">Apply now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

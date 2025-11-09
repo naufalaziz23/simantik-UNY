@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SIMANTIK Alumni</title>
+    
+    <link rel="stylesheet" href="dashboard_alumni.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div> 
+                <div class="sidebar-header">
+                    <h1>SIMANTIK</h1>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="nav-item active" data-page="Profile">
+                            <i class='bx bxs-user-circle'></i>
+                            <span>Profile</span>
+                        </li>
+                        <li class="nav-item" data-page="Dashboard">
+                            <i class='bx bx-grid-alt'></i>
+                            <span>Dashboard</span>
+                        </li>
+                        <li class="nav-item" data-page="JOBS">
+                            <i class='bx bx-briefcase'></i>
+                            <span>JOBS</span>
+                        </li>
+                        <li class="nav-item" data-page="EVENT">
+                            <i class='bx bx-calendar-event'></i>
+                            <span>EVENT</span>
+                        </li>
+                        <li class="nav-item" data-page="Alumni">
+                            <i class='bx bxs-graduation'></i>
+                            <span>Alumni</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div>
+                <div class="sidebar-promo">
+                    <i class='bx bx-edit-alt'></i>
+                    <h4>Sudah Update Profile?</h4>
+                    <p>Pastikan data Anda selalu baru agar tetap terhubung!</p>
+                    <a href="lengkapi-profile.html" class="btn-promo">Update Sekarang</a>
+                </div>
+
+                <div class="sidebar-logout">
+                    <a href="login.html" class="nav-item nav-item-logout">
+                        <i class='bx bx-log-out'></i>
+                        <span>Log Out</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="navbar">
+                <div class="greeting">
+                    <h2 id="main-greeting">Good Morning Alumni</h2>
+                    <p id="main-subgreeting">Hope you have a good day</p>
+                </div>
+                <div class="navbar-icons">
+                    <i class='bx bx-bell' id="bell-icon"></i>
+                    <i class='bx bx-envelope' id="envelope-icon"></i>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/40x40/ccc/fff?text=UNY" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-widgets">
+                <div class="widget large-widget profile-summary-widget">
+                    <h3>Selamat Datang, [Nama Alumni]!</h3>
+                    <div class="profile-content">
+                        <img src="https://via.placeholder.com/100x100/ccc/fff?text=FOTO" alt="Foto Profil" class="profile-photo">
+                        <div class="profile-details">
+                            <p><strong>NIM:</strong> 123456789</p>
+                            <p><strong>Angkatan:</strong> 2018</p>
+                            <p><strong>Perusahaan:</strong> PT. Sukses Selalu</p>
+                            <p><strong>Posisi:</strong> Software Engineer</p>
+                            <a href="lengkapi-profile.html" class="btn-edit-profile">Lengkapi Profile Anda</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget small-widget jobs-widget">
+                    <h3><i class='bx bx-briefcase'></i> Lowongan Pekerjaan Terbaru</h3>
+                    <ul class="item-list"></ul>
+                    <a href="#" class="view-all-link">Lihat Semua Lowongan &rarr;</a>
+                </div>
+
+                <div class="widget small-widget events-widget">
+                    <h3><i class='bx bx-calendar-event'></i> Acara Mendatang</h3>
+                    <ul class="item-list event-list"></ul>
+                    <a href="#" class="view-all-link">Lihat Semua Acara &rarr;</a>
+                </div>
+
+                <div class="widget large-widget chart-widget">
+                    <h3><i class='bx bxs-bar-chart-alt-2'></i> Sebaran Alumni Berdasarkan Pekerjaan</h3>
+                    <canvas id="alumniChart"></canvas>
+                </div>
+            </section>
+
+            <section id="page-content" style="display: none;"></section>
+        </main>
+    </div>
+
+    <script src="dashboard_alumni.js"></script>
+</body>
+</html>

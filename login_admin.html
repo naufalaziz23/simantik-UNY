@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin - Simantik</title>
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Bagian kiri -->
+    <div class="left">
+      <img src="Logo_Teknik_Industri_UNY-removebg-preview 2.png" alt="Logo Teknik Industri UNY" class="logo">
+      <h2>Sistem Informasi Manajemen<br>Alumni Teknik Industri</h2>
+      
+    </div>
+
+    <!-- Bagian kanan -->
+    <div class="right">
+      <h1>Welcome to the Simantik</h1>
+      <p>Already have an account?</p>
+
+      <!-- Form login -->
+      <form id="loginForm" class="form">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Masukkan email" required>
+
+        <label for="username">Username admin</label>
+        <input type="text" id="username" placeholder="Masukkan username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Masukkan password" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script agar tombol Login pindah ke dashboard -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // mencegah reload halaman
+      window.location.href = "admin_dashboard.html"; // arahkan ke dashboard
+    });
+  </script>
+
+</body>
+</html>
+
+
+ 

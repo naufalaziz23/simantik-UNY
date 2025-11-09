@@ -1,0 +1,339 @@
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* ===== LAYOUT UTAMA ===== */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #60A5FA 0%, #3B82F6 100%); /* gradasi biru muda */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 18px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(6px);
+}
+
+/* logout card di bawah sidebar */
+.logout-card {
+  background: rgba(255,255,255,0.12);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.logout-card img {
+  width: 100%;
+  max-width: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logout-card button {
+  width: 100%;
+  background: #3B82F6;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-card button:hover {
+  background: #2563EB;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 28px;
+  overflow-y: auto;
+}
+
+/* topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.topbar h1 {
+  color: #0F172A;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-avatar {
+  background: rgba(96,165,250,0.15);
+  color: #075985;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ===== CHART AREA ===== */
+.chart-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 6px;
+}
+
+/* chart-card umum */
+.chart-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* besar dan kecil */
+.chart-card.big {
+  flex: 2;
+  min-width: 0; /* supaya flex shrink aman */
+}
+
+.chart-card.small {
+  flex: 1;
+  max-width: 360px;
+  position: relative; /* untuk center text di pie */
+}
+
+/* judul chart */
+.chart-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+/* canvas responsive */
+.chart-card canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* center text di pie chart */
+.chart-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  color: #075985;
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+/* ===== BAGIAN BAWAH (cards) ===== */
+.cards {
+  display: flex;
+  gap: 18px;
+  margin-top: 26px;
+  align-items: stretch;
+}
+
+/* setiap card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  flex: 1;
+  padding: 14px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* gambar di card */
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* judul card */
+.card h3 {
+  margin: 0;
+  color: #075985;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* teks paragraf */
+.card p {
+  margin: 0;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ===== ANIMASI MASUK ===== */
+.chart-card,
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(.2,.9,.2,1);
+}
+
+.chart-card.show,
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  background: #3B82F6;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.35s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== FADE OUT ON LOGOUT ===== */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+  .chart-section {
+    flex-direction: column;
+  }
+  .chart-card.small {
+    max-width: 100%;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 12px 12px;
+  }
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+
+.card-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  animation: fadeInUp 1.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar-icon {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  color: #3B82F6;
+  background-color: #E0F2FE;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+/* Animasi lembut */
+@keyframes floatIcon {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+

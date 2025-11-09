@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMANTIK Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Fade-out efek */
+        body {
+            transition: opacity 0.3s ease;
+        }
+        body.fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-container">
+    <nav class="sidebar">
+        <div class="sidebar-top">
+            <div class="logo">SIMANTIK</div>
+            <ul class="nav-menu">
+                <li><a href="admin_dashboard.html" class="active"><i class="fa-solid fa-table-cells-large"></i> <span>Dashboard</span></a></li>
+                <li><a href="portal_jobs.html"><i class="fa-solid fa-briefcase"></i> <span>Jobs</span></a></li>
+                <li><a href="evemt_post.html"><i class="fa-solid fa-calendar-check"></i> <span>Event</span></a></li>
+                <li><a href="admin_dasboard_alumni.html"><i class="fa-solid fa-graduation-cap"></i> <span>Alumni</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-bottom">
+            <a href="login.html" class="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Log out</span></a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="header-title">
+                <h2>Dashboard</h2>
+                <p>Selamat datang kembali, Admin!</p>
+            </div>
+            <div class="header-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Cari...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <i class="fa-regular fa-bell notification-icon"></i>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=32" alt="User Avatar">
+                    <span>Budi P.</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon graduation"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="stat-info"><h4>Total Alumni</h4><p>1,250</p></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon briefcase"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="stat-info"><h4>Active Jobs</h4><p>42</p></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon users"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info"><h4>New Applicants</h4><p>105</p></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon calendar"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="stat-info"><h4>Events Today</h4><p>2</p></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="admin_dashboard.js"></script>
+</body>
+</html>
+
+

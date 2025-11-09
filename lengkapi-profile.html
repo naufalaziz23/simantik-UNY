@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lengkapi Profile - SIMANTIK</title>
+    
+    <link rel="stylesheet" href="lengkapi-profile.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="profile-page-container">
+        
+        <header class="page-header">
+            <h1>SIMANTIK</h1>
+            
+            <a href="dashboard_alumni.html" class="back-link">
+            <i class='bx bx-arrow-back'></i>
+                Kembali ke Dashboard
+            </a>
+        </header>
+
+        <main class="profile-content-wrapper">
+            
+            <div class="profile-form-widget">
+                <h2>Lengkapi Profile Anda</h2>
+                <p>Pastikan data Anda selalu terbaru agar mudah terhubung dengan alumni lain.</p>
+
+                <form id="profile-form">
+
+                    <div class="form-group photo-upload-group">
+                        <img src="https://via.placeholder.com/100x100/ccc/fff?text=FOTO" alt="Foto Profil" class="profile-photo-preview">
+                        <div>
+                            <label for="foto-profil">Upload Foto Profil</label>
+                            <input type="file" id="foto-profil" name="foto-profil">
+                            <small>Format: JPG, PNG, atau GIF. Maks 5MB.</small>
+                        </div>
+                    </div>
+
+                    <hr class="form-separator">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nama-lengkap">Nama Lengkap</label>
+                            <input type="text" id="nama-lengkap" name="nama-lengkap" value="[Nama Alumni]">
+                        </div>
+                        <div class="form-group">
+                            <label for="nim">NIM</label>
+                            <input type="text" id="nim" name="nim" value="123456789" readonly>
+                            <small>NIM tidak dapat diubah.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="angkatan">Angkatan (Tahun Masuk)</label>
+                            <input type="number" id="angkatan" name="angkatan" value="2018">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Kontak</label>
+                            <input type="email" id="email" name="email" value="alumni@email.com">
+                        </div>
+                    </div>
+
+                    <hr class="form-separator">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="perusahaan">Perusahaan Saat Ini</label>
+                            <input type="text" id="perusahaan" name="perusahaan" value="PT. Sukses Selalu">
+                        </div>
+                        <div class="form-group">
+                            <label for="posisi">Posisi / Jabatan</label>
+                            <input type="text" id="posisi" name="posisi" value="Software Engineer">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio Singkat</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Ceritakan sedikit tentang diri Anda..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Simpan Perubahan</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

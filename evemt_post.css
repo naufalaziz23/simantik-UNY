@@ -1,0 +1,387 @@
+/* ==================================== */
+/* GAYA DASAR & LAYOUT         */
+/* ==================================== */
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    height: 100vh; /* Tinggi penuh */
+    overflow: hidden; /* Mencegah scroll di body */
+}
+
+/* Menggunakan Flexbox untuk layout utama */
+.page-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Mengatur ikon global */
+i {
+    margin-right: 8px;
+    color: #555;
+}
+
+/* ==================================== */
+/* STYLE SIDEBAR KIRI (BIRU)     */
+/* ==================================== */
+
+.sidebar {
+    width: 260px; /* Lebar sidebar */
+    background-color: #0d47a1; /* Biru tua, sesuai gambar */
+    color: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column; /* Mengatur item secara vertikal */
+    flex-shrink: 0; /* Mencegah sidebar menyusut */
+}
+
+.sidebar .logo {
+    font-size: 2.5rem; /* Ukuran font logo "SIMANTIK" */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 12px;
+}
+
+.sidebar-nav li a {
+    text-decoration: none;
+    color: #e0e0e0; /* Warna teks link */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 20px;
+    display: flex; /* Menggunakan flex agar ikon dan teks sejajar */
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav li a i {
+    color: #e0e0e0; /* Warna ikon */
+    font-size: 1.1rem;
+    margin-right: 15px; /* Jarak ikon ke teks */
+}
+
+.sidebar-nav li a:hover {
+    background-color: #1565c0; /* Biru sedikit lebih muda saat hover */
+    color: #fff;
+}
+
+/* Style untuk link yang aktif */
+.sidebar-nav li a.active {
+    background-color: #1976d2; /* Biru cerah untuk item aktif */
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Bagian Logout di bawah */
+.logout-section {
+    margin-top: auto; /* Mendorong ke bagian bawah */
+    text-align: center;
+    background-color: #1976d2; /* Warna background box */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.logout-image {
+    width: 150px; /* Sesuaikan ukuran gambar */
+    margin-bottom: 16px;
+}
+
+.btn-logout {
+    background-color: #ffffff;
+    color: #0d47a1; /* Warna teks biru */
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px; /* Tombol oval */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #f0f0f0;
+}
+
+/* ==================================== */
+/* STYLE KONTEN KANAN (PUTIH)     */
+/* ==================================== */
+
+.main-content-wrapper {
+    flex: 1; /* Mengisi sisa ruang */
+    background-color: #f4f7f9;
+    padding: 24px 30px;
+    overflow-y: auto; /* HANYA area ini yang bisa di-scroll */
+    height: 100vh;
+    box-sizing: border-box; /* Padding termasuk dalam height */
+}
+
+/* Navbar Atas */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 12px 20px 12px 45px; /* Padding kiri untuk ikon */
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    width: 300px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 18px;
+    top: 13px;
+    color: #aaa;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-info .fa-bell {
+    font-size: 1.3rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Placeholder */
+    border: 2px solid #0d47a1;
+}
+
+/* ==================================== */
+/* STYLE KONTEN EVENT (MODIFIKASI) */
+/* ==================================== */
+
+.event-page-container {
+    width: 100%;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.event-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.nav-arrows .arrow-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.nav-arrows .arrow-icon i {
+    color: #555;
+    margin: 0;
+}
+
+/* Navigasi Mingguan */
+.week-navigation {
+    display: flex;
+    justify-content: space-around; /* Menyebar rata */
+    gap: 10px;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.week-navigation .nav-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.week-navigation .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.week-navigation .nav-item.active {
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Grid Kalender */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 kolom */
+    gap: 16px;
+}
+
+.day-column {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    min-height: 300px;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.day-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.day-header .date-num {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Styling Event Card yang Baru */
+.event-card {
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #007bff; /* Garis penanda */
+    border-radius: 8px;
+    padding: 14px;
+    transition: box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Tags (Label Kategori) */
+.event-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.event-tag.workshop { background-color: #007bff; }
+.event-tag.webinar { background-color: #28a745; }
+.event-tag.kunjungan { background-color: #ffc107; color: #333; }
+.event-tag.lomba { background-color: #dc3545; }
+.event-tag.deadline { background-color: #6c757d; }
+
+/* Warna border-left disamakan dengan tag */
+.event-card:has(.workshop) { border-left-color: #007bff; }
+.event-card:has(.webinar) { border-left-color: #28a745; }
+.event-card:has(.kunjungan) { border-left-color: #ffc107; }
+.event-card:has(.lomba) { border-left-color: #dc3545; }
+.event-card:has(.deadline) { border-left-color: #6c757d; }
+
+
+/* Detail di dalam Card */
+.event-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #222;
+}
+
+.event-detail, .event-time {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+.event-detail i, .event-time i {
+    color: #777; /* Ikon di dalam card */
+}
+
+/* Tombol CTA (Call to Action) */
+.btn-detail, .btn-register {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 12px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.btn-detail {
+    background-color: #e9ecef;
+    color: #333;
+}
+.btn-detail:hover {
+    background-color: #d6dbe0;
+}
+
+.btn-register {
+    background-color: #0056b3;
+    color: #fff;
+}
+.btn-register:hover {
+    background-color: #004494;
+}

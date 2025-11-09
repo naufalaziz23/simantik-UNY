@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/* Kiri */
+.left {
+  flex: 1;
+  background-color: #0057ff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.left .logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.left h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.left .illustration {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Kanan */
+.right {
+  flex: 1;
+  background-color: white;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.right p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0057ff;
+  outline: none;
+}
+
+.btn {
+  background-color: #0057ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0043cc;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .right {
+    padding: 40px 30px;
+  }
+
+  .left .illustration {
+    width: 180px;
+  }
+}
+
+/* Animasi efek interaktif */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form {
+  animation: fadeIn 0.8s ease;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Tombol loading */
+.btn.loading {
+  background-color: #0043cc;
+  cursor: not-allowed;
+  opacity: 0.8;
+  position: relative;
+}
+
+.btn.loading::after {
+  content: "";
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Efek sukses */
+.success {
+  animation: fadeIn 0.6s ease;
+  color: #00a86b;
+}
+
+/* Efek error (shake) */
+.error {
+  animation: shake 0.4s;
+  border-color: #ff3333 !important;
+}
+
+

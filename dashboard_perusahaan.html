@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIMANTIK - Dashboard Perusahaan</title>
+  <link rel="stylesheet" href="dashboard_perusahaan.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- ==== SIDEBAR ==== -->
+    <aside class="sidebar">
+      <div>
+        <div class="logo">SIMANTIK</div>
+        <ul class="nav-menu">
+          <li><a href="#" class="active" data-section="dashboard"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+          <li><a href="#" data-section="lowongan"><i class="fas fa-briefcase"></i><span>Kelola Lowongan</span></a></li>
+          <li><a href="#" data-section="profil"><i class="fas fa-building"></i><span>Profil Perusahaan</span></a></li>
+          <li><a href="#" data-section="alumni"><i class="fas fa-users"></i><span>Daftar Alumni</span></a></li>
+        </ul>
+      </div>
+
+      <!-- ==== LOGOUT BUTTON ==== -->
+      <div class="sidebar-bottom">
+        <a href="#" class="logout-btn" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==== MAIN CONTENT ==== -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="section active-section">
+        <div class="header">
+          <div class="header-title">
+            <h2>Selamat Datang, PT. Maju Jaya</h2>
+            <p>Ringkasan aktivitas perusahaan Anda di SIMANTIK</p>
+          </div>
+          <div class="header-controls">
+            <div class="search-bar">
+              <input type="text" placeholder="Cari sesuatu..." />
+              <i class="fas fa-search"></i>
+            </div>
+            <i class="far fa-bell notification-icon"></i>
+            <div class="user-profile">
+              <img src="img/user.jpg" alt="User">
+              <span>Admin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-info"><h4>Lowongan Aktif</h4><p>8</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-user-check"></i></div>
+            <div class="stat-info"><h4>Pelamar</h4><p>126</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-calendar-alt"></i></div>
+            <div class="stat-info"><h4>Wawancara Terjadwal</h4><p>14</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-info"><h4>Alumni Direkrut</h4><p>37</p></div>
+          </div>
+        </div>
+
+        <h3 class="section-title">Lowongan Terbaru</h3>
+        <table class="table-lowongan">
+          <thead>
+            <tr><th>Posisi</th><th>Status</th><th>Tanggal Posting</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Backend Engineer</td><td>Aktif</td><td>02-11-2025</td></tr>
+            <tr><td>UI/UX Designer</td><td>Aktif</td><td>01-11-2025</td></tr>
+            <tr><td>Marketing Specialist</td><td>Tutup</td><td>25-10-2025</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- LOWONGAN -->
+      <section id="lowongan" class="section hidden-section">
+        <div class="header-title">
+          <h2>Kelola Lowongan</h2>
+          <p>Tambahkan atau perbarui informasi lowongan kerja</p>
+        </div>
+        <div class="form-container">
+          <input type="text" id="posisiInput" placeholder="Nama Posisi">
+          <select id="statusInput">
+            <option value="Aktif">Aktif</option>
+            <option value="Tutup">Tutup</option>
+          </select>
+          <button id="btnTambah">+ Tambah</button>
+        </div>
+        <table class="table-lowongan" id="tabelLowongan">
+          <thead>
+            <tr><th>Posisi</th><th>Status</th><th>Tanggal Posting</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Software Engineer</td><td>Aktif</td><td>01-11-2025</td></tr>
+            <tr><td>Data Analyst</td><td>Aktif</td><td>29-10-2025</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- PROFIL -->
+      <section id="profil" class="section hidden-section">
+        <div class="profile-card">
+          <h2>PT. Maju Jaya</h2>
+          <p><strong>Bidang:</strong> Teknologi Informasi</p>
+          <p><strong>Alamat:</strong> Jl. Gatot Subroto No. 12, Jakarta</p>
+          <p><strong>Email:</strong> hr@majujaya.co.id</p>
+          <p><strong>Deskripsi:</strong> Perusahaan teknologi yang berfokus pada pengembangan solusi digital dan sistem informasi untuk berbagai sektor industri.</p>
+        </div>
+      </section>
+
+      <!-- ALUMNI -->
+      <section id="alumni" class="section hidden-section">
+        <h2>Daftar Alumni</h2>
+        <div class="filter-container">
+          <input type="text" id="searchInput" placeholder="Cari alumni...">
+          <select id="filterAngkatan">
+            <option value="">Semua Angkatan</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+          <select id="filterSkill">
+            <option value="">Semua Skill</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+        </div>
+        <div id="alumniList"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Fungsi Logout
+    document.getElementById('logoutBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Optional: bisa tambahkan konfirmasi
+      const konfirmasi = confirm('Apakah Anda yakin ingin logout?');
+      if (konfirmasi) {
+        // Hapus data login kalau ada
+        localStorage.removeItem('userLogin');
+        // Arahkan ke halaman login
+        window.location.href = 'portal_login.html';
+      }
+    });
+  </script>
+
+  <script src="dashboard_perusahaan.js"></script>
+</body>
+</html>
+
+

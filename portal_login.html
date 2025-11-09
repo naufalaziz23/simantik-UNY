@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Login - Simatik Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style_portal.css" /> 
+</head>
+<body>
+    <div class="container">
+        
+        <div class="left">
+            <h1>Login</h1>
+            <p class="subtitle">Silakan pilih jenis pengguna Anda.</p>
+
+            <form id="loginForm">
+                
+                <div class="input-group">
+                    <input type="radio" name="user_type" id="admin" value="admin" required/>
+                    <label for="admin">Admin</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="radio" name="user_type" id="perusahaan" value="perusahaan"/>
+                    <label for="perusahaan">Perusahaan</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="radio" name="user_type" id="alumni" value="alumni"/>
+                    <label for="alumni">Alumni</label>
+                </div>
+
+                <button type="button" id="loginBtn">Masuk</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Selamat Datang di<br><span>Simatik Portal</span></h2>
+            <p>Silakan masuk untuk mengakses akun Anda.</p>
+            <img src="Logo_Teknik_Industri_UNY-removebg-preview 2.png" alt="Logo Teknik Industri UNY" class="logo">
+        </div>
+        </div>
+
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const admin = document.getElementById("admin").checked;
+            const perusahaan = document.getElementById("perusahaan").checked;
+            const alumni = document.getElementById("alumni").checked;
+
+            if (admin) {
+                window.location.href = "login_admin.html";
+            } else if (perusahaan) {
+                window.location.href = "login_perushaan.html"; 
+            } else if (alumni) {
+                window.location.href = "login_alumni.html";
+            } else {
+                alert("Mohon pilih salah satu jenis pengguna untuk melanjutkan.");
+            }
+        });
+        
+        // Menambahkan interaktivitas CSS (memberi highlight pada input yang dipilih)
+        document.querySelectorAll('.input-group').forEach(group => {
+            group.addEventListener('click', function() {
+                document.querySelectorAll('.input-group').forEach(g => g.classList.remove('active'));
+                this.classList.add('active');
+                
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                }
+            });
+        });
+
+    </script>
+    </div>
+    </div>
+
+    <script src="portal_login.js"></script> 
+</body>
+</html>
+</body>
+</html>
+
